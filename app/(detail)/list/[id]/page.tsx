@@ -13,7 +13,7 @@ interface IParams {
 export async function generateMetadata({ params: { id } }: IParams) {
   const bookList = await getBooksInCategory(id);
   return {
-    title: bookList.list_name || 'Book Category',
+    title: bookList.results.list_name || 'Book Category',
   };
 }
 
