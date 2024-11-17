@@ -1,3 +1,4 @@
+import CategoryBooks from '../../../../components/categoryBooks';
 import { API_URL } from '../../../contants';
 
 export async function getBooksInCategory(name: string) {
@@ -24,19 +25,14 @@ export default async function BookDetail({ params: { id } }: IParams) {
       <h1>타이틀</h1>
       <ul>
         {booksData.results.books.map((book) => (
-          <li key={book.rank}>
-            <div>
-              <div>
-                <img src={book.book_image} alt={book.title} />
-                <span>{book.rank}</span>
-              </div>
-              <h3>{book.title}</h3>
-              <p>{`by. ${book.author}`}</p>
-              <a href={book.amazon_product_url} target={'_blank'}>
-                purchase
-              </a>
-            </div>
-          </li>
+          <CategoryBooks
+            key={book.rank}
+            rank={book.rank}
+            book_image={book.book_image}
+            title={book.title}
+            author={book.author}
+            amazon_product_url={book.amazon_product_url}
+          />
         ))}
       </ul>
     </div>
