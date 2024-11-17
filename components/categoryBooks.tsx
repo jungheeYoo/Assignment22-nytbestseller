@@ -1,3 +1,5 @@
+import styles from '../styles/detail.module.css';
+
 interface ICategoryBooksProps {
   rank: number;
   book_image: string;
@@ -14,16 +16,18 @@ export default function CategoryBooks({
   amazon_product_url,
 }: ICategoryBooksProps) {
   return (
-    <li>
-      <div>
-        <div>
-          <img src={book_image} alt={title} />
-          <span>{rank}</span>
-        </div>
-        <h3>{title}</h3>
-        <p>{`by ${author}`}</p>
-        <a href={amazon_product_url} target={'_blank'}>
-          purchase
+    <li className={styles.card}>
+      <img src={book_image} alt={title} />
+      <div className={styles.cardContent}>
+        <h3 className={styles.cardTitle}>{title}</h3>
+        <p className={styles.cardAuthor}>{`by ${author}`}</p>
+        <a
+          href={amazon_product_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.cardLink}
+        >
+          Purchase
         </a>
       </div>
     </li>

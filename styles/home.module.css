@@ -39,9 +39,6 @@
   z-index: 1;
 }
 
-.category__lists:hover {
-}
-
 .category__lists::before {
   content: '';
   position: absolute;
