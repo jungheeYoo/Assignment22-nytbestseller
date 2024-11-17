@@ -6,14 +6,14 @@ export const metadata = {
 
 const URL = 'https://books-api.nomadcoders.workers.dev/lists';
 
-async function getBookLists() {
+async function getCategoryLists() {
   const response = await fetch(URL);
   const json = await response.json();
   return json.results || [];
 }
 
 export default async function HomePage() {
-  const bookLists = await getBookLists();
+  const bookLists = await getCategoryLists();
   return (
     <div>
       {bookLists.length > 0 ? (
