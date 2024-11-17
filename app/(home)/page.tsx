@@ -1,10 +1,11 @@
 import Link from 'next/link';
+import AllCategory from '../../components/allCategory';
 
 export const metadata = {
   title: 'Home',
 };
 
-const URL = 'https://books-api.nomadcoders.workers.dev/lists';
+export const URL = 'https://books-api.nomadcoders.workers.dev/lists';
 
 async function getCategoryLists() {
   const response = await fetch(URL);
@@ -19,11 +20,11 @@ export default async function HomePage() {
       {bookLists.length > 0 ? (
         <ul>
           {bookLists.map((list) => (
-            <li key={list.list_name_encoded}>
-              <Link href={`/lists/${list.list_name_encoded}`}>
-                {list.display_name}
-              </Link>
-            </li>
+            <AllCategory
+              key={list.list_name_encoded}
+              display_name={list.display_name}
+              list_name_encoded={list.list_name_encoded}
+            />
           ))}
         </ul>
       ) : (

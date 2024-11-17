@@ -1,4 +1,5 @@
 import Header from '../components/header';
+import Footer from '../components/footer';
 import '../styles/global.css';
 import { Metadata } from 'next';
 
@@ -16,6 +17,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <body>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
