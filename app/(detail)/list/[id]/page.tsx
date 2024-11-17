@@ -1,7 +1,7 @@
 import CategoryBooks from '../../../../components/categoryBooks';
 import { API_URL } from '../../../contants';
 
-export async function getBooksInCategory(name: string) {
+async function getBooksInCategory(name: string) {
   const response = await fetch(`${API_URL}/list?name=${name}`);
   return response.json();
 }
@@ -10,7 +10,7 @@ interface IParams {
   params: { id: string };
 }
 
-export async function getBooksInCategoryMetadata({ params: { id } }: IParams) {
+export async function generateMetadata({ params: { id } }: IParams) {
   const bookList = await getBooksInCategory(id);
   return {
     title: bookList.list_name || 'Book Category',

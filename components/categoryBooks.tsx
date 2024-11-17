@@ -1,4 +1,4 @@
-interface ICategoryBookProps {
+interface ICategoryBooksProps {
   rank: number;
   book_image: string;
   title: string;
@@ -12,7 +12,7 @@ export default function CategoryBooks({
   title,
   author,
   amazon_product_url,
-}: ICategoryBookProps) {
+}: ICategoryBooksProps) {
   return (
     <li>
       <div>
