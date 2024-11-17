@@ -1,25 +1,23 @@
-import Link from 'next/link';
 import AllCategory from '../../components/allCategory';
+import { API_URL } from '../contants';
 
 export const metadata = {
   title: 'Home',
 };
 
-export const URL = 'https://books-api.nomadcoders.workers.dev/lists';
-
-async function getCategoryLists() {
-  const response = await fetch(URL);
+export async function getCategoryLists() {
+  const response = await fetch(`${API_URL}/lists`);
   const json = await response.json();
   return json.results || [];
 }
 
 export default async function HomePage() {
-  const bookLists = await getCategoryLists();
+  const categoryLists = await getCategoryLists();
   return (
     <div>
-      {bookLists.length > 0 ? (
+      {categoryLists.length > 0 ? (
         <ul>
-          {bookLists.map((list) => (
+          {categoryLists.map((list) => (
             <AllCategory
               key={list.list_name_encoded}
               display_name={list.display_name}

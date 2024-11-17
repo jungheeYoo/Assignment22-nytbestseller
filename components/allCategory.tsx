@@ -11,7 +11,7 @@ export default function AllCategory({
 }: IAllCategoryProps) {
   return (
     <li>
-      <Link href={`/movies/${list_name_encoded}`}>{display_name}</Link>
+      <Link href={`/list/${list_name_encoded}`}>{display_name}</Link>
     </li>
   );
 }
