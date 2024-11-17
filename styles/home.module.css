@@ -18,8 +18,8 @@
   gap: 10px;
   padding: 40px;
   margin: 0;
-  /* border: 1px solid whitesmoke; */
-  background-color: #b3aea9;
+  border: 1px solid whitesmoke;
+  background-color: rgba(179, 174, 169, 0.2);
 }
 
 .category__lists {
@@ -28,7 +28,7 @@
   justify-content: start;
   position: relative;
   padding-left: 15px;
-  color: whitesmoke;
+  color: white;
   /* border: 1px solid transparent; */
   border-radius: 5px 0px 5px 0;
   height: 40px;
@@ -36,6 +36,7 @@
   font-size: 16px;
   transition: transform 0.3s ease, background-color 0.3s ease;
   overflow: hidden;
+  z-index: 1;
 }
 
 .category__lists:hover {
@@ -46,7 +47,7 @@
   position: absolute;
   width: 15px;
   height: 15px;
-  background-color: rgba(255, 255, 135, 0.5);
+  background-color: rgba(255, 0, 0, 0.541);
   border-radius: 50%;
   left: 6px;
   top: 12px;
@@ -61,4 +62,6 @@
 .category__lists a {
   color: inherit;
   font-weight: bold;
+  position: relative; /* 텍스트를 ::before 위에 위치하도록 설정 */
+  z-index: 1; /* 텍스트를 앞쪽 레이어로 이동 */
 }

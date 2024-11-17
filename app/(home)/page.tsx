@@ -19,7 +19,7 @@ export default async function HomePage() {
       {categoryLists.length > 0 ? (
         <>
           <div>
-            <h1 className={styles.title}>The New York Times Best Seller</h1>
+            <h1 className={styles.title}>🎄 The New York Times Best Seller</h1>
             <ul className={styles.category}>
               {categoryLists.map((list) => (
                 <AllCategory
