@@ -1,7 +1,8 @@
 import Header from '../components/header';
 import Footer from '../components/footer';
-import '../styles/global.css';
 import { Metadata } from 'next';
+import '../styles/global.css';
+import styles from './../styles/home.module.css';
 
 export const metadata: Metadata = {
   title: {
@@ -16,7 +17,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <body>
         <Header />
-        {children}
+        <div className={styles.wrap}>{children}</div>
         <Footer />
       </body>
     </html>

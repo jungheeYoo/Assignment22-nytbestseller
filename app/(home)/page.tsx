@@ -1,5 +1,6 @@
 import AllCategory from '../../components/allCategory';
 import { API_URL } from '../contants';
+import styles from '../../styles/home.module.css';
 
 export const metadata = {
   title: 'Home',
@@ -16,15 +17,20 @@ export default async function HomePage() {
   return (
     <div>
       {categoryLists.length > 0 ? (
-        <ul>
-          {categoryLists.map((list) => (
-            <AllCategory
-              key={list.list_name_encoded}
-              display_name={list.display_name}
-              list_name_encoded={list.list_name_encoded}
-            />
-          ))}
-        </ul>
+        <>
+          <div>
+            <h1 className={styles.title}>The New York Times Best Seller</h1>
+            <ul className={styles.category}>
+              {categoryLists.map((list) => (
+                <AllCategory
+                  key={list.list_name_encoded}
+                  display_name={list.display_name}
+                  list_name_encoded={list.list_name_encoded}
+                />
+              ))}
+            </ul>
+          </div>
+        </>
       ) : (
         <p>리스트가 없습니다</p>
       )}
