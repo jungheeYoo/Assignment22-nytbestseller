@@ -5,7 +5,7 @@ export const metadata = {
   title: 'Home',
 };
 
-export async function getCategoryLists() {
+async function getCategoryLists() {
   const response = await fetch(`${API_URL}/lists`);
   const json = await response.json();
   return json.results || [];
