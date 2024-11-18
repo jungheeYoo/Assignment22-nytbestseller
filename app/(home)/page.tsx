@@ -7,7 +7,6 @@ export const metadata = {
 };
 
 async function getCategoryLists() {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
   const response = await fetch(`${API_URL}/lists`);
   const json = await response.json();
   return json.results || [];
