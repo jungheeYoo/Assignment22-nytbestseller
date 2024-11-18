@@ -59,6 +59,6 @@
 .category__lists a {
   color: inherit;
   font-weight: bold;
-  position: relative; /* 텍스트를 ::before 위에 위치하도록 설정 */
-  z-index: 1; /* 텍스트를 앞쪽 레이어로 이동 */
+  position: relative;
+  z-index: 1;
 }

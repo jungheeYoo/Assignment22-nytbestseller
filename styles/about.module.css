@@ -1,5 +1,6 @@
 .wrap {
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   max-width: 1400px;
   margin: 0 auto;
   text-align: start;
@@ -10,4 +11,5 @@
 .title {
   font-size: 2rem;
   font-weight: bolder;
+  margin-bottom: 30px;
 }

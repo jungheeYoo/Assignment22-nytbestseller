@@ -23,8 +23,8 @@ export default async function BookDetail({ params: { id } }: IParams) {
 
   return (
     <>
-      <h1 className={styles.title}>⛄ {booksData.results.list_name}</h1>
-      <div className={styles.container}>
+      <h1 className={styles.headerTitle}>⛄ {booksData.results.list_name}</h1>
+      <div className={styles.wrap}>
         <ul className={styles.list}>
           {booksData.results.books.map((book) => (
             <CategoryBooks

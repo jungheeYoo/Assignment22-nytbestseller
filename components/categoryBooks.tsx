@@ -17,10 +17,21 @@ export default function CategoryBooks({
 }: ICategoryBooksProps) {
   return (
     <li className={styles.card}>
-      <img src={book_image} alt={title} />
+      <div className={styles.rank}>{rank}</div>
+      <div className={styles.cardImg}>
+        <img className={styles.img} src={book_image} alt={title} />
+      </div>
+
       <div className={styles.cardContent}>
-        <h3 className={styles.cardTitle}>{title}</h3>
-        <p className={styles.cardAuthor}>{`by ${author}`}</p>
+        <h3 className={styles.cardTitle}>
+          <span className={styles.title}>Title</span>
+          {title}
+        </h3>
+        <p className={styles.cardAuthor}>
+          <span className={styles.by}>Written by</span>
+          {author}
+        </p>
+
         <a
           href={amazon_product_url}
           target="_blank"
